@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang ="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator_aptestver</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--계산기 버튼(Calculator button)-->
+    <div id="calculator">
+        <input type="text" id="display" disabled>
+        <div id="buttons">
+            <button onclick="clearDisplay('all')">C</button>
+            <button onclick="clearDisplay('√')">CE</button>
+            <button onclick="setOperation('√')">√</button>
+            <button onclick="setOperation('DIV')">DIV</bttton>
+            <button onclick="setOperation('MOD')">MOD</button>
+            <button onclick="appendNumber('7')">7</button>
+            <button onclick="appendNumber('8')">8</button>
+            <button onclick="appendNumber('9')">9</button>
+            <button onclick="deleteLast()">DEL</button>
+            <button onclick="setOperation('%')">%</button>
+            <button onclick="appendNumber('4')">4</button>
+            <button onclick="appendNumber('5')">5</button>
+            <button onclick="appendNumber('6')">6</button>
+            <button onclick="setOperation('×')">×</button>
+            <button onclick="setOperation('÷')">÷</button>
+            <button onclick="appendNumber('1')">1</button>
+            <button onclick="appendNumber('2')">2</button>
+            <button onclick="appendNumber('3')">3</button>
+            <button onclick="setOperation('+')">+</button>
+            <button onclick="setOperation('-')">-</button>
+            <button onclick="appendNumber('0')">0</button>
+            <button onclick="appendDecimal()">.</button>
+            <button onclick="setOperation('EXP')">EXP</button>
+            <button onclick="recallAnswer()">ANS</button>
+            <button onclick="calculateResult()">EXE</button>
+        </div>
+    <script src ="main.js"></script>
+</body>
+</html>

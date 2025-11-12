@@ -1,0 +1,13 @@
+#calculator {
+  width: 480px;     /* 80px 버튼 × 5개 + 간격 */
+}
+
+#buttons button {
+  width: 80px;        /* 버튼 너비 */
+  height: 50px;       /* 버튼 높이 */
+  font-size: 1.2em;   /* 글자 크기 */
+  border: none;
+  border-radius: 6px;
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
