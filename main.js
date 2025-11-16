@@ -14,14 +14,18 @@ function appendDecimal() {
   }
 }
 
-// 전체 지우기(C)
+// 지우기(C/CE)
 function clearDisplay(type) {
+  // 전체 지우기(C)
   if (type === "all") {
     display.value = "";
     currentOperation = null;
+    expression = "";
   } else if (type === "entry") {
-    // 마지막 입력만 지우기
-    display.value = display.value.replace(/\d+$/, "");
+let match = display.value.match(/[\d.]+$/);
+    if (match) {
+        display.value = display.value.slice(0, -match[0].length);
+    }
   }
 }
 
@@ -34,8 +38,9 @@ function deleteLast() {
 function setOperation(op) {
     if (op === "EXP") {
         display.value += "EXP";
-    } else
+    } else {
         display.value += op;
+    }
     currentOperation = op;
 }
 
@@ -49,6 +54,14 @@ function recallAnswer() {
 // 결과 계산(EXE)
 function calculateResult() {
   try {
+    if (display.value.includes("%")) {
+      let parts = display.value.split("%");
+      let base = parseFloat(parts[0].trim());
+      display.value = base / 100;
+      lastAnswer = base / 100;
+      return;
+    }
+    
     let expression = display.value
       .replace(/MOD/g, "%")
       .replace(/×/g, "*")
